@@ -1,8 +1,8 @@
 import "../css/App.css";
 import React, { Component } from "react";
 import ShoppingCart from "./ShoppingCart";
-// import AddAppointments from "./AddAppointments";
 import ProductsList from "./ProductList";
+import { findIndex } from "lodash";
 // import { result } from "lodash";
 
 class App extends Component {
@@ -11,16 +11,49 @@ class App extends Component {
 		this.state = {
 			store: "StoreName",
 			arrProducts: [],
-			// lastIndex: 0,
+			shopCartProds:[1,2,3],
 		};
+		this.decrementItem = this.decrementItem.bind(this);
+		this.incrementItem = this.incrementItem.bind(this);
 	}
+	
+	incrementItem(chosenProd) {
+		let tempProduct = Object.assign(this.state.arrProducts);
+		var SearchIndex = findIndex(tempProduct,{productName : chosenProd})
+		tempProduct[SearchIndex].stock = Object.assign(this.state.arrProducts[SearchIndex].stock);
+		tempProduct[SearchIndex].stock++;
+		console.log(this.shopCartProds);
+		console.log(tempProduct);
+		this.setState({
+			arrProducts: tempProduct,
+		});
+	}
+
+
+
+	decrementItem(chosenProd) {
+		let tempProduct = Object.assign(this.state.arrProducts);
+		console.log (tempProduct)
+		var SearchIndex = findIndex(tempProduct,{productName : chosenProd})
+		tempProduct[SearchIndex].stock = Object.assign(this.state.arrProducts[SearchIndex].stock);
+		tempProduct[SearchIndex].stock--;
+
+		console.log("///temp" + tempProduct[SearchIndex].stock);
+		//console.log("///arr" + JSON.stringify{arrProducts});
+		//console.log(tempProduct);
+		this.setState({
+			arrProducts: tempProduct,
+		});
+	}
+
 	componentDidMount() {
 		fetch("data.json")
 			.then((response) => response.json())
 			.then((result) => {
 				const prod = result.map((item) => {
-					// item.uniq = this.state.lastIndex;
-					// this.setState({ lastIndex: this.state.lastIndex + 1 });
+					console.log(item.stock);
+				
+
 					return item;
 				});
 				this.setState({
@@ -28,7 +61,6 @@ class App extends Component {
 				});
 			});
 	}
-
 	render() {
 		return (
 			<main className="page bg-white" id="petratings">
@@ -39,9 +71,11 @@ class App extends Component {
 								{this.state.store}
 
 								<ShoppingCart />
-								
-								{/* <AddAppointments /> */}
-								<ProductsList products={this.state.arrProducts} />
+								<ProductsList
+									products={this.state.arrProducts}
+									decrementItem={this.decrementItem}
+									incrementItem={this.incrementItem}
+									/>
 							</div>
 						</div>
 					</div>

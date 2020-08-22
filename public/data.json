@@ -3,36 +3,36 @@
       "productName": "BEAR",
       "description": "Bear toy",
       "image": "./images/bear.jpeg",
-      "stock":10
+      "stock":5
     },
     {
-      "productName": "BUNNY ",
+      "productName": "Bunny ",
       "description": "A rabbit toy",
       "image": "./images/bunny.jpeg",
-      "stock":10
+      "stock":17
     },
     {
       "productName": "LION",
       "description": "A lion toy",
       "image": "./images/lion.jpeg",
-      "stock":10
+      "stock":13
     },
     {
       "productName": "PANDA",
       "description": "Never say no to a panda",
       "image": "./images/panda.jpeg",
-      "stock":10
+      "stock":9
     },
     {
       "productName": "PIG",
       "description": "Please don't break it",
       "image": "./images/pig.jpeg",
-      "stock":10
+      "stock":3
     },
     {
       "productName": "ZOO",
       "description": "Toys kit",
       "image": "./images/zoo.jpeg",
-      "stock":10
+      "stock":0
     }
   ]
