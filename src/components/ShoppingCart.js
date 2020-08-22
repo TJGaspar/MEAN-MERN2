@@ -3,13 +3,13 @@ import { GiShoppingCart } from "react-icons/gi";
 class ShoppingCart extends Component {
 	render() {
 		return (
-			<div className="shopping-cart">
-				{" "}
-				Shopping cart <GiShoppingCart />
-				<button className="btn btn-md btn-info">
+			<section className=" container d-flex justify-content-center">
+				<div className="shopping-cart"> Shopping cart <GiShoppingCart /></div>
+				
+				<button className="btn btn-md btn-info ">
 		{0} items
 				</button>
-			</div>
+			</section>
 		);
 	}
 }

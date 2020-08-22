@@ -1,7 +1,7 @@
 [
     {
       "productName": "BEAR",
-      "description": "Bear toy",
+      "description": "Bear toy with a lot of text just to tezt how it behaves",
       "image": "./images/bear.jpeg",
       "stock":5
     },
