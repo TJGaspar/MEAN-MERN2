@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { GiShoppingCart } from "react-icons/gi";
+
 class ShoppingCart extends Component {
 	render() {
 		return (
@@ -7,7 +8,7 @@ class ShoppingCart extends Component {
 				<div className="shopping-cart"> Shopping cart <GiShoppingCart /></div>
 				
 				<button className="btn btn-md btn-info ">
-		{0} items
+		{this.props.shoppingItems} items
 				</button>
 			</section>
 		);

@@ -1,10 +1,9 @@
 import "../css/App.css";
 import React, { Component } from "react";
-//import Product from "./Product";
+
 import ShoppingCart from "./ShoppingCart";
 import ProductsList from "./ProductList";
 import { findIndex } from "lodash";
-
 
 class App extends Component {
 	constructor() {
@@ -12,40 +11,43 @@ class App extends Component {
 		this.state = {
 			store: "DreamWithUz",
 			arrProducts: [],
-			shopCartProds: [1, 2, 3],
+			shoppingItems: 0,
 		};
-		this.decrementItem = this.decrementItem.bind(this);
-		this.incrementItem = this.incrementItem.bind(this);
+		this.decrementCart = this.decrementCart.bind(this);
+		this.incrementCart = this.incrementCart.bind(this);
 	}
 
-	incrementItem(chosenProd) {
+	incrementCart(chosenProd) {
 		let tempProduct = Object.assign(this.state.arrProducts);
 		var SearchIndex = findIndex(tempProduct, { productName: chosenProd });
 		tempProduct[SearchIndex].stock = Object.assign(
-			this.state.arrProducts[SearchIndex].stock
+			this.state.arrProducts[SearchIndex].stockQuantity
 		);
-		tempProduct[SearchIndex].stock++;
-		console.log(this.shopCartProds);
-		console.log(tempProduct);
-		this.setState({
-			arrProducts: tempProduct,
-		});
+		if (tempProduct[SearchIndex].stock > 0) {
+			tempProduct[SearchIndex].stockQuantity--;
+			this.setState({
+				arrProducts: tempProduct,
+				shoppingItems: this.state.shoppingItems + 1,
+			});
+		}
 	}
 
-	decrementItem(chosenProd) {
+	decrementCart(chosenProd, inicialStock) {
+		console.log(inicialStock);
 		let tempProduct = Object.assign(this.state.arrProducts);
-		console.log(tempProduct);
 		var SearchIndex = findIndex(tempProduct, { productName: chosenProd });
 		tempProduct[SearchIndex].stock = Object.assign(
-			this.state.arrProducts[SearchIndex].stock
+			this.state.arrProducts[SearchIndex].stockQuantity
 		);
-		tempProduct[SearchIndex].stock--;
-
-		console.log("///temp" + tempProduct[SearchIndex].stock);
-
-		this.setState({
-			arrProducts: tempProduct,
-		});
+		console.log(Object.assign(tempProduct[SearchIndex].stock));
+		if (inicialStock > tempProduct[SearchIndex].stock) {
+			tempProduct[SearchIndex].stockQuantity++;
+			console.log(tempProduct);
+			this.setState({
+				arrProducts: tempProduct,
+				shoppingItems: this.state.shoppingItems - 1,
+			});
+		}
 	}
 
 	componentDidMount() {
@@ -62,7 +64,10 @@ class App extends Component {
 				});
 			});
 	}
+
 	render() {
+				console.log("aaaaaaaa" + this.state.shoppingItems);
+
 		return (
 			<main className="page bg-white" id="petratings">
 				<div className="container d-flex justify-content-center">
@@ -75,22 +80,17 @@ class App extends Component {
 								>
 									{this.state.store}
 								</h2>
-
 								<ShoppingCart
-									decrementItem={this.decrementItem}
-									incrementItem={this.incrementItem}
-									
+									decrementCart={this.decrementCart}
+									incrementCart={this.incrementCart}
+									cartproducts={this.state.shopCartProds}
+									shoppingItems={this.state.shoppingItems}
 								/>
 								<ProductsList
 									products={this.state.arrProducts}
-									decrementItem={this.decrementItem}
-									incrementItem={this.incrementItem}
+									decrementCart={this.decrementCart}
+									incrementCart={this.incrementCart}
 								/>
-								{/* <Product
-									decrementItem={this.decrementItem}
-									incrementItem={this.incrementItem}
-									products={this.state.arrProducts}
-								/> */}
 							</div>
 						</div>
 					</div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Product from "./Product";
 
 class ProductList extends Component {
 	render() {
@@ -9,39 +10,16 @@ class ProductList extends Component {
 						className="card product-name col media py-3 "
 						key={item.productName}
 					>
-						<div className="mr-3"></div>
-
-						<div className="product-info media-body">
-							<div className="product-head ">
-								<span className="product-text">{item.productName}</span>
-							</div>
-
-							<div className="product-name">
-								<span className="label-item">Description: </span>
-								<span>{item.productDescription}</span>
-							</div>
-							<section className="container  text-center">
-								<img src={item.imageURL} alt="" />
-								<div className="card bg-info text-center">
-									stock: {item.stockQuantity}
-								</div>
-								<section className="container d-flex justify-content-center">
-									<button
-										className="btn btn-md btn-danger mx-1 px-3"
-										onClick={() => this.props.decrementItem(item.productName)}
-									>
-										-
-									</button>
-									<button
-										className="btn btn-md btn-success mx-1 px-3"
-										onClick={() => this.props.incrementItem(item.productName)}
-									>
-										+
-									</button>
-								</section>
-							</section>
-						</div>
+						<Product
+							productName={item.productName}
+							stockQuantity={item.stockQuantity}
+							imageURL={item.imageURL}
+							productDescription={item.productDescription}
+							decrementCart={this.props.decrementCart}
+							incrementCart={this.props.incrementCart}
+						/>
 					</div>
+					
 				))}
 			</div>
 		);
