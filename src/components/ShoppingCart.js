@@ -4,12 +4,12 @@ import { GiShoppingCart } from "react-icons/gi";
 class ShoppingCart extends Component {
 	render() {
 		return (
-			<section className=" container d-flex justify-content-center">
-				<div className="shopping-cart"> Shopping cart <GiShoppingCart /></div>
+			<section className=" container d-flex justify-content-center my-2">
+				<div className="shopping-cart px-1 align-bottom"> Shopping cart <GiShoppingCart /></div>
 				
-				<button className="btn btn-md btn-info ">
+				<div className="card bg-info text-center px-2">
 		{this.props.shoppingItems} items
-				</button>
+				</div>
 			</section>
 		);
 	}

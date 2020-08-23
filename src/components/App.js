@@ -33,16 +33,13 @@ class App extends Component {
 	}
 
 	decrementCart(chosenProd, inicialStock) {
-		console.log(inicialStock);
 		let tempProduct = Object.assign(this.state.arrProducts);
 		var SearchIndex = findIndex(tempProduct, { productName: chosenProd });
 		tempProduct[SearchIndex].stock = Object.assign(
 			this.state.arrProducts[SearchIndex].stockQuantity
 		);
-		console.log(Object.assign(tempProduct[SearchIndex].stock));
 		if (inicialStock > tempProduct[SearchIndex].stock) {
 			tempProduct[SearchIndex].stockQuantity++;
-			console.log(tempProduct);
 			this.setState({
 				arrProducts: tempProduct,
 				shoppingItems: this.state.shoppingItems - 1,
@@ -55,8 +52,6 @@ class App extends Component {
 			.then((response) => response.json())
 			.then((result) => {
 				const prod = result.map((item) => {
-					console.log(item.stock);
-
 					return item;
 				});
 				this.setState({
@@ -66,18 +61,13 @@ class App extends Component {
 	}
 
 	render() {
-				console.log("aaaaaaaa" + this.state.shoppingItems);
-
 		return (
 			<main className="page bg-white" id="petratings">
 				<div className="container d-flex justify-content-center">
 					<div className="row">
 						<div className="col-md-12 bg-white">
 							<div className="container ">
-								<h2
-									className="text-center font-weight-bold .
-								text-secondary"
-								>
+								<h2 className="text-center font-weight-bold text-secondary">
 									{this.state.store}
 								</h2>
 								<ShoppingCart

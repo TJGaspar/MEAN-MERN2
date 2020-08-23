@@ -15,55 +15,48 @@ class Product extends Component {
 			stockQuantity: this.props.stockQuantity,
 		});
 	}
-
+	//className="card product-name col media py-3 text-uppercase "
 	render() {
 		return (
-			<div
-				className="card product-name col media py-3 "
-				key={this.props.productName}
-			>
-				<div className="mr-3"></div>
+			<div className="card p-3">
+				<span className="product-name text-uppercase">
+					{this.props.productName}
+				</span>
 
-				<div className="product-info media-body">
-					<div className="product-head ">
-						<span className="product-text">{this.props.productName}</span>
-					</div>
-
-					<div className="product-name">
-						<span className="label-item">Description: </span>
-						<span>{this.props.productDescription}</span>
-					</div>
-					<section className="container  text-center">
-						<img src={this.props.imageURL} alt="" />
-						<div className="card bg-info text-center">
-							stock: {this.props.stockQuantity}
-						</div>
-						<section className="container d-flex justify-content-center">
-							<button
-								className="btn btn-md btn-danger mx-1 px-3"
-								onClick={() =>
-									this.props.decrementCart(
-										this.state.productName,
-										this.state.stockQuantity
-									)
-								}
-							>
-								-
-							</button>
-							<button
-								className="btn btn-md btn-success mx-1 px-3"
-								onClick={() =>
-									this.props.incrementCart(
-										this.state.productName,
-										this.state.stockQuantity
-									)
-								}
-							>
-								+
-							</button>
-						</section>
-					</section>
+				<div className="product-description">
+					<span>Description: </span>
+					<span>{this.props.productDescription}</span>
 				</div>
+				<section>
+					<img className=" d-flex container" src={this.props.imageURL} alt="" />
+					<div className="card bg-info text-center">
+						stock: {this.props.stockQuantity}
+					</div>
+					<section className="container d-flex justify-content-center">
+						<button
+							className="btn btn-md btn-danger m-1 px-3"
+							onClick={() =>
+								this.props.decrementCart(
+									this.state.productName,
+									this.state.stockQuantity
+								)
+							}
+						>
+							-
+						</button>
+						<button
+							className="btn btn-md btn-success m-1 px-3"
+							onClick={() =>
+								this.props.incrementCart(
+									this.state.productName,
+									this.state.stockQuantity
+								)
+							}
+						>
+							+
+						</button>
+					</section>
+				</section>
 			</div>
 		);
 	}
