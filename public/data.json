@@ -1,38 +1,38 @@
 [
     {
       "productName": "BEAR",
-      "description": "Bear toy with a lot of text just to tezt how it behaves",
-      "image": "./images/bear.jpeg",
-      "stock":5
+      "productDescription": "Bear toy with a lot of text just to tezt how it behaves",
+      "imageURL": "./images/bear.jpeg",
+      "stockQuantity":5
     },
     {
       "productName": "Bunny ",
-      "description": "A rabbit toy",
-      "image": "./images/bunny.jpeg",
-      "stock":17
+      "productDescription": "A rabbit toy",
+      "imageURL": "./images/bunny.jpeg",
+      "stockQuantity":17
     },
     {
       "productName": "LION",
-      "description": "A lion toy",
-      "image": "./images/lion.jpeg",
-      "stock":13
+      "productDescription": "A lion toy",
+      "imageURL": "./images/lion.jpeg",
+      "stockQuantity":13
     },
     {
       "productName": "PANDA",
-      "description": "Never say no to a panda",
-      "image": "./images/panda.jpeg",
-      "stock":9
+      "productDescription": "Never say no to a panda",
+      "imageURL": "./images/panda.jpeg",
+      "stockQuantity":9
     },
     {
       "productName": "PIG",
-      "description": "Please don't break it",
-      "image": "./images/pig.jpeg",
-      "stock":3
+      "productDescription": "Please don't break it",
+      "imageURL": "./images/pig.jpeg",
+      "stockQuantity":3
     },
     {
       "productName": "ZOO",
-      "description": "Toys kit",
-      "image": "./images/zoo.jpeg",
-      "stock":0
+      "productDescription": "Toys kit",
+      "imageURL": "./images/zoo.jpeg",
+      "stockQuantity":0
     }
   ]

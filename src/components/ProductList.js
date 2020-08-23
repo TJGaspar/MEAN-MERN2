@@ -18,12 +18,12 @@ class ProductList extends Component {
 
 							<div className="product-name">
 								<span className="label-item">Description: </span>
-								<span>{item.description}</span>
+								<span>{item.productDescription}</span>
 							</div>
 							<section className="container  text-center">
-								<img src={item.image} alt="" />
+								<img src={item.imageURL} alt="" />
 								<div className="card bg-info text-center">
-									stock: {item.stock}
+									stock: {item.stockQuantity}
 								</div>
 								<section className="container d-flex justify-content-center">
 									<button

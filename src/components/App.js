@@ -1,9 +1,10 @@
 import "../css/App.css";
 import React, { Component } from "react";
+//import Product from "./Product";
 import ShoppingCart from "./ShoppingCart";
 import ProductsList from "./ProductList";
 import { findIndex } from "lodash";
-// import { result } from "lodash";
+
 
 class App extends Component {
 	constructor() {
@@ -41,8 +42,7 @@ class App extends Component {
 		tempProduct[SearchIndex].stock--;
 
 		console.log("///temp" + tempProduct[SearchIndex].stock);
-		//console.log("///arr" + JSON.stringify{arrProducts});
-		//console.log(tempProduct);
+
 		this.setState({
 			arrProducts: tempProduct,
 		});
@@ -76,12 +76,21 @@ class App extends Component {
 									{this.state.store}
 								</h2>
 
-								<ShoppingCart />
+								<ShoppingCart
+									decrementItem={this.decrementItem}
+									incrementItem={this.incrementItem}
+									
+								/>
 								<ProductsList
 									products={this.state.arrProducts}
 									decrementItem={this.decrementItem}
 									incrementItem={this.incrementItem}
 								/>
+								{/* <Product
+									decrementItem={this.decrementItem}
+									incrementItem={this.incrementItem}
+									products={this.state.arrProducts}
+								/> */}
 							</div>
 						</div>
 					</div>
