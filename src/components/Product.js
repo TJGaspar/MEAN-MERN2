@@ -23,7 +23,7 @@ class Product extends Component {
 					{this.props.productName}
 				</span>
 
-				<div className="product-description">
+				<div className="product-description  dd-inline-block text-truncate">
 					<span>Description: </span>
 					<span>{this.props.productDescription}</span>
 				</div>

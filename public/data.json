@@ -1,38 +1,38 @@
 [
-    {
-      "productName": "bEAR",
-      "productDescription": "Bear toy with a lot of text just to tezt how it behaves",
-      "imageURL": "./images/bear.jpeg",
-      "stockQuantity":5
-    },
-    {
-      "productName": "Bunny ",
-      "productDescription": "A rabbit toy",
-      "imageURL": "./images/bunny.jpeg",
-      "stockQuantity":17
-    },
-    {
-      "productName": "LION",
-      "productDescription": "A lion toy",
-      "imageURL": "./images/lion.jpeg",
-      "stockQuantity":13
-    },
-    {
-      "productName": "PANDA",
-      "productDescription": "Never say no to a panda",
-      "imageURL": "./images/panda.jpeg",
-      "stockQuantity":9
-    },
-    {
-      "productName": "PIG",
-      "productDescription": "Please don't break it",
-      "imageURL": "./images/pig.jpeg",
-      "stockQuantity":3
-    },
-    {
-      "productName": "ZOO",
-      "productDescription": "Toys kit",
-      "imageURL": "./images/zoo.jpeg",
-      "stockQuantity":0
-    }
-  ]
+	{
+		"productName": "bEAR",
+		"productDescription": "Bear toy with a lot of text just to tezt how it behaves and I must say that it rocks, because as you can see it's awesome",
+		"imageURL": "./images/bear.jpeg",
+		"stockQuantity": 5
+	},
+	{
+		"productName": "Bunny ",
+		"productDescription": "A rabbit toy",
+		"imageURL": "./images/bunny.jpeg",
+		"stockQuantity": 17
+	},
+	{
+		"productName": "LION",
+		"productDescription": "A lion toy",
+		"imageURL": "./images/lion.jpeg",
+		"stockQuantity": 13
+	},
+	{
+		"productName": "PANDA",
+		"productDescription": "Never say no to a panda",
+		"imageURL": "./images/panda.jpeg",
+		"stockQuantity": 9
+	},
+	{
+		"productName": "PIG",
+		"productDescription": "Please don't break it",
+		"imageURL": "./images/pig.jpeg",
+		"stockQuantity": 3
+	},
+	{
+		"productName": "ZOO",
+		"productDescription": "Toys kit",
+		"imageURL": "./images/zoo.jpeg",
+		"stockQuantity": 0
+	}
+]
